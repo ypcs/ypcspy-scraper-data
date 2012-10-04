@@ -1,0 +1,60 @@
+[{
+    "url": "http[s]?://(www.)?koas.fi/keskustelu[/]?",
+    "description": "KOAS Chat",
+    "author": {
+        "name": "Ville Korhonen",
+        "email": "ville@xd.fi",
+    },
+    "slices": [
+        {
+            "name": "topics",
+            "description": "Kaikki viestiketjut kaikilta keskustelualueilta",
+            "content": [
+                {
+                    "name": "forum",
+                    "description": "Keskustelualueet",
+                    "xpath": "//table[class='forum']",
+                    "content": [
+                        {
+                            "name": "topics",
+                            "description": "Viestiketju",
+                            "xpath": "tr",
+                            "content": [
+                                {
+                                    "name": "title",
+                                    "description": "Viestiketjun aihe",
+                                    "xpath": "td[1]/a/text()"
+                                },
+                                {
+                                    "name": "tags",
+                                    "description": "Viestiketjun avainsanat",
+                                    "xpath": "td[1]/div[@class='tagit']/a/text()"
+                                },
+                                {
+                                    "name": "latest",
+                                    "description": "Viimeisimmän viestin aikaleima",
+                                    "xpath": "td[4]/text()"
+                                },
+                                {
+                                    "name": "url",
+                                    "description": "Viestiketjun URL",
+                                    "xpath": "td[1]/a/@href"
+                                },
+                                {
+                                    "name": "author",
+                                    "description": "Ketjun aloittaja",
+                                    "xpath": "td[2]/text()"
+                                },
+                                {
+                                    "name": "reply_count",
+                                    "description": "Vastausten määrä",
+                                    "xpath": "td[3]/text()"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}]
