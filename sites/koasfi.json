@@ -1,25 +1,26 @@
 [{
-    "url": "http[s]?://(www.)?koas.fi/keskustelu[/]?",
+    "url": "^http[s]?://(www.)?koas.fi/keskustelu[/]?$",
     "description": "KOAS Chat",
+    "uuid": "7bc653c0-0e94-11e2-892e-0800200c9a66",
     "author": {
         "name": "Ville Korhonen",
-        "email": "ville@xd.fi",
+        "email": "ville@xd.fi"
     },
-    "slices": [
+    "collections": [
         {
             "name": "topics",
             "description": "Kaikki viestiketjut kaikilta keskustelualueilta",
-            "content": [
+            "slice": [
                 {
                     "name": "forum",
                     "description": "Keskustelualueet",
-                    "xpath": "//table[class='forum']",
-                    "content": [
+                    "xpath": "//table[@class='forum']",
+                    "slice": [
                         {
                             "name": "topics",
                             "description": "Viestiketju",
                             "xpath": "tr",
-                            "content": [
+                            "slice": [
                                 {
                                     "name": "title",
                                     "description": "Viestiketjun aihe",
