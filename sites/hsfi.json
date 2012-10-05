@@ -1,0 +1,33 @@
+[{
+    "url": "^http[s]?://(www.)?hs.fi/a[0-9]{1,}[/]?$",
+    "description": "HS.fi",
+    "uuid": "6422a240-0e9a-11e2-892e-0800200c9a66",
+    "author": {
+        "name": "Ville Korhonen",
+        "email": "ville@xd.fi"
+    },
+    "collections": [
+        {
+            "name": "article",
+            "description": "Uutisartikkelin sisältö",
+            "xpath": "//div[@id='article-area']",
+            "slice": [
+                {
+                    "name": "title",
+                    "description": "Uutisotsikko",
+                    "xpath": "div[@id='main-content']/h1/text()"
+                },
+                {
+                    "name": "date",
+                    "description": "Uutisen luontiaika",
+                    "xpath": "div[@class='meta']/time/span[@class='value']/text()"
+                },
+                {
+                    "name": "content",
+                    "description": "Uutissisältö",
+                    "xpath": "div[@id='article-text']/text()"
+                }
+            ]
+        }
+    ]
+}]
